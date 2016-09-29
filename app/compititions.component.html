@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Compitition Type</h1>
+  <div>
+    <table>
+      <tr>
+        <th>Caption</th>
+        <th>League</th>
+        <th>Year</th>
+      </tr>
+      <tr *ngFor = "let comp of compititions">
+        <td> {{ comp.caption}}</td>
+        <td> {{ comp.league}}</td>
+        <td> {{ comp.year}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
