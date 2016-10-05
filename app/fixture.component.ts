@@ -21,5 +21,14 @@ export class FixtureComponent {
 			console.log(this.matches);
 		}
 			)
+	}
+
+	isMatches(){
+		if(this.matches === null){
+			return false
 		}
+		else{
+			return true
+		}
+	}
 }

@@ -1,0 +1,21 @@
+<div *ngIf = "teams" class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<h2>Teams List</h2>
+			<p>{{ teams.count }}</p>
+			<table class="table table-bordered">
+				<tr>
+					<th>Name</th>
+					<th>Short Name</th>
+					<th>Market Value</th>
+				</tr>
+				<tr *ngFor = "let team of teams.teams">
+					<td>{{team.name}}</td>
+					<td>{{team.code}}</td>
+					<td>{{team.squadMarketValue}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+

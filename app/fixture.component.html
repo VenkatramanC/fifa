@@ -1,17 +1,21 @@
-<button (click)="clicked()">Today's Fixtures</button>
-<div *ngIf = "matches" class= "container">
-	<p> {{ matches.count }}</p>
-	<table>
-	<h3>Today's matches</h3>
-		<tr>
-			<th>Time </th>
-			<th>Home Team</th>
-			<th>Away team</th>
-		</tr>
-		<tr *ngFor = "let match of matches.fixtures">
-			<td>{{ match.date}}</td>
-			<td>{{ match.awayTeamName}}</td>
-			<td>{{ match.homeTeamName}}</td>
-		</tr>
-	</table>
-</div> 
+<div class="container">
+	<div *ngIf = "!isMatches()">
+	<button (click)="clicked()">Today's Fixtures</button>
+		<table class="table table-bordered">
+			<h3>Today's matches</h3>
+			<tr>
+				<th>Time </th>
+				<th>Home Team</th>
+				<th>Away team</th>
+			</tr>
+			<tr *ngFor = "let match of matches.fixtures">
+				<td>{{ match.date }}</td>
+				<td>{{ match.awayTeamName}}</td>
+				<td>{{ match.homeTeamName}}</td>
+			</tr>
+		</table>
+	</div> 
+	<div *ngIf = "isMatches()">
+		<h3>Today No fixtures</h3>
+	</div>
+</div>

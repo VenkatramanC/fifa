@@ -1,0 +1,59 @@
+<div *ngIf = "rank" class="container">
+	<div *ngIf = "!isLeague()">
+		<h1>{{rank.leagueCaption}}</h1>
+		<table class="table table-striped table-hover ">
+			<tr>
+				<th class = "text-center">Rank</th>
+				<th>Team Name</th>
+				<th class = "text-center">Played Games</th>
+				<th class = "text-center">Wins</th>
+				<th class = "text-center">Draws</th>
+				<th class = "text-center">Losses</th>
+				<th class = "text-center">Goals Scored</th>
+				<th class = "text-center">Goals Conceded</th>
+				<th class = "text-center">Points</th>
+			</tr>
+			<tr *ngFor = "let state of rank.standing">
+				<td class = "text-center">{{ state.position}}</td>
+				<td><a (click)="teamDetail(state)">
+					{{ state.teamName}}
+					</a>	
+				</td>
+				<td class = "text-center">{{ state.playedGames}}</td>
+				<td class = "text-center">{{ state.wins}}</td>
+				<td class = "text-center">{{ state.draws}}</td>
+				<td class = "text-center">{{ state.losses}}</td>
+				<td class = "text-center">{{ state.goals}}</td>
+				<td class = "text-center">{{ state.goalsAgainst}}</td>
+				<td class = "text-center">{{ state.points}}</td>
+			</tr>
+		</table> 
+	</div>
+	<div *ngIf = "isLeague()" >
+		<h1>{{rank.leagueCaption}}</h1>
+		<div class="row">
+			<div class="col-md-6">
+				<table *ngFor = "let game of group"  class="table table-striped table-hover">
+					<tr>
+						<th>Rank</th>
+						<th>Team</th>
+						<th>Played Matches</th>
+						<th>Goals Scored</th>
+						<th>Goals Against</th>
+						<th>Points</th>
+
+					</tr>
+
+					<tr *ngFor = "let match of game">
+						<td>{{ match.rank }}</td>
+						<td>{{ match.team }}</td>
+						<td>{{ match.playedGames}}</td>
+						<td>{{ match.goals }}</td>
+						<td>{{ match.goalsAgainst}}</td>
+						<td>{{ match.points}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

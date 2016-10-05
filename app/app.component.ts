@@ -1,19 +1,12 @@
 import { Component } from '@angular/core';
 import { Http , Headers } from '@angular/http';
 import { FixtureComponent} from './fixture.component';
-import {CompititionsComponent } from './compititions.component'
+import { CompititionsComponent } from './compititions.component'
 
 @Component({
     selector: 'my-app',
-    template: `<h1>{{ title }}</h1>
-    			<button>
-					<a routerLink="/compititions">Compititions</a>
-    			</button>
-    			<button>
-					<a routerLink="/fixtures">Upcoming matches</a>
-    			</button>
-   				<router-outlet></router-outlet>
-    			`
+    templateUrl: `app/app.component.html`,
+    styleUrls: [`app/app.component.css`]
 
 })
 export class AppComponent { 
