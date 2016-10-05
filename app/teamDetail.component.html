@@ -1,0 +1,24 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div *ngIf = "players" class = "container">
+	<div class="row">
+		<div *ngFor= " let player of players.players">
+			<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="card hovercard">
+					<div class="info">
+						<div class="title">
+							<h2>{{ player.name}}</h2>
+						</div>
+						<h5>Position: {{ player.position}}</h5>
+						<div class="desc">Nationality: {{ player.nationality }}</div>
+						<div class="desc">Jersey Number: {{ player.jerseyNumber }}</div>
+						<div class="desc">Date Of birth: {{ player.dateOfBirth}}</div>
+						<div class="desc">Contract upto: {{ player.contractUntil }}</div>
+					</div>
+					<div class="bottom">
+						<div class="desc">Value: {{ player.marketValue }}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

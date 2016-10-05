@@ -3,9 +3,8 @@ import { Router, ActivatedRoute} from '@angular/router';
 import { TeamDetailService } from './teamDetail.service'
 @Component({
 	selector: 'team-detail',
-	template: `<div *ngIf = "players" class = "container">
-					{{players}}
-			   </div>`
+	templateUrl: 'app/teamDetail.component.html',
+	styleUrls: ['app/teamDetail.component.css']
 })
 export class TeamDetailComponent implements OnInit{
 	teamId: any;

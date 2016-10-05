@@ -8,11 +8,13 @@ import {CompititionsComponent} from './compititions.component'
 //import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 @Component({
 	selector: 'teams',
-	templateUrl: 'app/teams.component.html'
+	templateUrl: 'app/teams.component.html',
+	styleUrls: [`app/teams.component.css`]
 })
 export class TeamsComponent implements OnInit  {
 	teams: any;
 	teamObj: any;
+	teamId: any;
 
 	private url = `http://api.football-data.org/v1/competitions`;
 	private headers = new Headers({"X-Auth-Token": "c6fae2504ec441928fccb032fc91bb4e"})
@@ -38,5 +40,28 @@ export class TeamsComponent implements OnInit  {
     onTeam(id: number): void{
     	let link: any = [ `teams/${id}/players`]
     	this.router.navigate(link);    
+    }
+
+    checkCode(team: any){
+    	if(team.code === null) { 
+    		return false
+    	} else {
+    		return true
+    	}
+    }
+     
+    checkValue(team: any){
+    	if(team.squadMarketValue === null){
+    		return false
+    	}
+    	else{
+    		return  true
+    	}
+    }
+
+    goToFixtures(team: any){
+    	this.teamId = (team._links.self.href).split("/").reverse()[0]
+    	let link = [`teams/${this.teamId}/fixtures`]
+    	this.router.navigate(link);
     }
 }

@@ -12,6 +12,7 @@ import { TeamsComponent } from './teams.component';
 import { LeagueFixturesComponent } from './leagueFixtures.component';
 import { LeagueTableComponent } from './leagueTable.component';
 import { TeamDetailComponent } from './teamDetail.component';
+import { TeamFixturesComponent }from './teamFixtures.component';
 // Services
 import { FixtureService} from './fixture.service';
 import { CompititionsService } from './compititions.service';
@@ -19,6 +20,7 @@ import { CompititionsService } from './compititions.service';
 import { LeagueFixturesService } from './leagueFixtures.service';
 import { LeagueTableService } from './leagueTable.service';
 import {TeamDetailService} from './teamDetail.service';
+import { TeamFixturesService } from './teamFixtures.service'
 
 
 @NgModule({
@@ -29,12 +31,15 @@ import {TeamDetailService} from './teamDetail.service';
   				    TeamsComponent,
   				    LeagueFixturesComponent,
   				    LeagueTableComponent,
-  				    TeamDetailComponent
+  				    TeamDetailComponent,
+              TeamFixturesComponent
   				],
   providers:[FixtureService , CompititionsService, 
   //,TeamsService
   LeagueFixturesService,LeagueTableService,
   TeamDetailService
+  //,
+  TeamFixturesService
   ],
   bootstrap: [ AppComponent ]
 })

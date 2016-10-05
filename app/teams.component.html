@@ -1,21 +1,31 @@
-<div *ngIf = "teams" class="container">
-	<div class="row">
-		<div class="col-md-9">
-			<h2>Teams List</h2>
-			<p>{{ teams.count }}</p>
-			<table class="table table-bordered">
-				<tr>
-					<th>Name</th>
-					<th>Short Name</th>
-					<th>Market Value</th>
-				</tr>
-				<tr *ngFor = "let team of teams.teams">
-					<td>{{team.name}}</td>
-					<td>{{team.code}}</td>
-					<td>{{team.squadMarketValue}}</td>
-				</tr>
-			</table>
+
+<section id="plans">
+	<div *ngIf = "teams" class="container">
+		<div class="row">
+			<div *ngFor = "let team of teams.teams" class="col-md-4 text-center ">
+				<div class="panel panel-danger panel-pricing">
+					<div class="panel-heading">
+						<img class= "img" src="{{ team.crestUrl}}" alt="" height="45" width="45">
+					</div>
+					
+					<div class="panel-body text-center">
+						<h3>{{ team.name }}</h3>
+						<p *ngIf = "checkCode(team)">Code:<strong>{{team.code}}</strong></p>
+						<p *ngIf = "!checkCode(team)">Code: <strong>----</strong></p>
+					</div>
+					<ul *ngIf = "checkValue(team)"class="list-group text-center">
+						<li class="list-group-item"><i class="fa fa-check"></i> Team Value: {{team.squadMarketValue}}</li>
+					</ul>
+					<ul *ngIf = "!checkValue(team)"class="list-group text-center">
+						<li class="list-group-item"><i class="fa fa-check"></i> Team Value: unknown</li>
+					</ul>
+					<div class="panel-footer">
+						<button (click) = "goToFixtures(team)" class = "btn btn-lg btn-block btn-primary" >Fixtures</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
+
 

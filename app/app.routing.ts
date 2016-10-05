@@ -7,6 +7,7 @@ import { TeamsComponent          } from './teams.component';
 import { LeagueFixturesComponent } from './leagueFixtures.component';
 import { LeagueTableComponent    } from './leagueTable.component';
 import { TeamDetailComponent     } from './teamDetail.component';
+import { TeamFixturesComponent   } from './teamFixtures.component';
 //import {TeamsResolver} from './resolves/teams.resolver';
 const appRoutes: Routes = [
   {
@@ -41,6 +42,10 @@ const appRoutes: Routes = [
   {
     path: 'teams/:id/players',
     component: TeamDetailComponent
+  },
+  {
+    path: 'teams/:id/fixtures',
+    component: TeamFixturesComponent
   }
  ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
