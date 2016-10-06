@@ -64,4 +64,10 @@ export class TeamsComponent implements OnInit  {
     	let link = [`teams/${this.teamId}/fixtures`]
     	this.router.navigate(link);
     }
+
+    goToDetail(team: any){
+        this.teamId = (team._links.self.href).split("/").reverse()[0]
+        let link = [`teams/${this.teamId}/players`]
+        this.router.navigate(link);
+    }
 }

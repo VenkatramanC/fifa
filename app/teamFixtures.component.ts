@@ -5,10 +5,11 @@ import { TeamFixturesService } from './teamFixtures.service'
 
 @Component({
 	selector: 'team-fixtures',
-	template: `<h3>Welcome to Fixtures</h3>`
+	templateUrl: 'app/teamFixtures.component.html'
 })
 export class TeamFixturesComponent implements OnInit {
 	fixId: any;
+	fixtures: any;
 	constructor(
 		private route: ActivatedRoute,
 		private router: Router		,
@@ -20,7 +21,7 @@ export class TeamFixturesComponent implements OnInit {
 		.map(params => {this.fixId = params['id']})
 		this.fixId = this.route.snapshot.params
 
-		 return this.teamFixturesService.getFixtures()
+		 return this.teamFixturesService.getFixtures(this.fixId.id)
+		 .subscribe(resp => {this.fixtures = resp})
 	}
-
 }

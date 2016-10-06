@@ -1,0 +1,23 @@
+<div *ngIf = "fixtures" class="container">
+	<div class="row">
+		<h2>Fixtures</h2>
+		<div *ngFor = "let fix of fixtures.fixtures" class="col-md-5 col-md-offset-1" >
+			<div class="well row" >
+				<div class="col-md-4">
+					<h3>{{ fix.homeTeamName }}</h3>
+				</div>
+				<div class="col-md-4">
+					<div>
+						<h3 class ="text center"> {{ fix.result.goalsHomeTeam }} - {{ fix.result.goalsAwayTeam }}</h3>
+						<p >{{ fix.status}}</p>
+					</div>
+					<p >{{ fix.date}}</p>
+				</div>
+				<div class="col-md-4">
+					<img src="" alt="">
+					<h3>{{ fix.awayTeamName }}</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

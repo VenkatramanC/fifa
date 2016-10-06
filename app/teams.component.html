@@ -9,7 +9,11 @@
 					</div>
 					
 					<div class="panel-body text-center">
-						<h3>{{ team.name }}</h3>
+						<h3> 
+							<a (click) = "goToDetail(team)" >
+								{{ team.name }}
+							</a>
+						</h3>
 						<p *ngIf = "checkCode(team)">Code:<strong>{{team.code}}</strong></p>
 						<p *ngIf = "!checkCode(team)">Code: <strong>----</strong></p>
 					</div>

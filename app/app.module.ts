@@ -38,7 +38,7 @@ import { TeamFixturesService } from './teamFixtures.service'
   //,TeamsService
   LeagueFixturesService,LeagueTableService,
   TeamDetailService
-  //,
+  ,
   TeamFixturesService
   ],
   bootstrap: [ AppComponent ]
